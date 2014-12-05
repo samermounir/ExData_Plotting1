@@ -4,7 +4,8 @@
 
 ## Step 0 using the lubridate library
 library(lubridate)
-## Step 1 read the data into the elecdata (including doing all the adjustments)
+## Step 1 read the data into the elecdata including doing all the adjustments
+## like reading the header , seperator ";", removing the rows containing n"?"
 elecdata<-read.table("household_power_consumption.txt",sep=";",header=TRUE,na.strings="?",colClasses = c(rep("character", 2), rep("numeric", 7)))
 ## Step 2 creating a new data set for first & Second of Feb. 2007 only
 mydata <- elecdata[elecdata$Date %in% c("1/2/2007","2/2/2007"),]
